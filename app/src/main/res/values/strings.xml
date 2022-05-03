@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">InmobiliariaNovara</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="Inicio">Inicio</string>
+    <string name="Perfil">Perfil</string>
+    <string name="Inmuebles">Inmuebles</string>
+    <string name="Inquilino">Inquilino</string>
+    <string name="Logout">Logout</string>
+    <string name="yes">yes</string>
+    <string name="no">no</string>
+    <string name="Contrato">Contrato</string>
+</resources>
