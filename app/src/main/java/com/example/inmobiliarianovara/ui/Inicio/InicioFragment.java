@@ -24,7 +24,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class InicioFragment extends Fragment implements OnMapReadyCallback {
 
     private GoogleMap mapa;
-    private LatLng SanLuis = new LatLng(-33.280576,-66.332482);
+    private LatLng Inmobiliaria = new LatLng(-33.051028,-65.627130);
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -42,20 +42,17 @@ public class InicioFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap)
     {
-
         mapa = googleMap;
         CameraPosition camPos = new CameraPosition.Builder()
-                .target(SanLuis)
-                .zoom(19)
-                .bearing(90)
-                .tilt(70)
+                .target(Inmobiliaria)
+                .zoom(17)
                 .build();
 
         CameraUpdate camUpdICT = CameraUpdateFactory.newCameraPosition(camPos);
         mapa.animateCamera(camUpdICT);
 
-        mapa.addMarker(new MarkerOptions().position(SanLuis)).setTitle("San Luis");
-        mapa.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+        mapa.addMarker(new MarkerOptions().position(Inmobiliaria)).setTitle("Inmobiliaria Novara");
+        mapa.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         mapa.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
             @Override
             public void onMapLongClick(@NonNull LatLng latLng) {

@@ -60,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
     {
         login=findViewById(R.id.btnIniciar);
         etUsuario=findViewById(R.id.etUsuario);
-        etContraseña=findViewById(R.id.etInquilino);
+        etContraseña=findViewById(R.id.etEmailInquilino);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
         public void onSensorChanged(SensorEvent sensorEvent) {
             if(bandera == 0 && sensorEvent.values[0] >= 20 || sensorEvent.values[0] <= -20)
             {
-                Uri tel = Uri.parse("tel:2664110272");
+                Uri tel = Uri.parse("tel:+542664110272");
                 startActivity(new Intent(Intent.ACTION_CALL,tel));
                 bandera=1;
             }

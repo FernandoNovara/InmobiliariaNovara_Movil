@@ -22,7 +22,7 @@ public class PagoViewModel extends ViewModel {
     public void cargarPagos(Bundle bundle) {
         Contrato contrato = (Contrato) bundle.get("contrato");
         ApiClient apiClient=ApiClient.getApi();
-        ArrayList<Pago> pagos = apiClient.obtenerPago(contrato);
+        ArrayList<Pago> pagos = apiClient.obtenerPagos(contrato);
         this.pagos.setValue(pagos);
     }
 

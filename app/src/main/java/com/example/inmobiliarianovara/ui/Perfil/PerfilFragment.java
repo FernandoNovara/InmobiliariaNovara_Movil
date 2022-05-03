@@ -69,12 +69,12 @@ public class PerfilFragment extends Fragment {
 
     private void inicializarVista(View root)
     {
-        etDni = root.findViewById(R.id.etDniPerfil);
-        etNombre = root.findViewById(R.id.etFechaInicio);
-        etApellido = root.findViewById(R.id.etFechaFinal);
-        etTelefono = root.findViewById(R.id.etInmueble);
-        etContraseña = root.findViewById(R.id.etInquilino);
-        etEmail = root.findViewById(R.id.etMontoAlquiler);
+        etDni = root.findViewById(R.id.etCodigoInquilino);
+        etNombre = root.findViewById(R.id.etNombreInquilino);
+        etApellido = root.findViewById(R.id.etApellidoInquilino);
+        etTelefono = root.findViewById(R.id.etTelefonoInquilino);
+        etContraseña = root.findViewById(R.id.etEmailInquilino);
+        etEmail = root.findViewById(R.id.etDni);
 
         btnEditar = root.findViewById(R.id.btnPagos);
 

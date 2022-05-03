@@ -24,31 +24,46 @@
         tools:layout="@layout/fragment_inmueble" />
 
     <fragment
+        android:id="@+id/nav_InmueblesAlquilados"
+        android:name="com.example.inmobiliarianovara.ui.Inquilino.InmueblesAlquiladosFragment"
+        android:label="@string/InmueblesAlquilados"
+        tools:layout="@layout/fragment_inmuebles_alquilados" >
+        <action
+            android:id="@+id/action_nav_inmueblesAlquilados_to_nav_inquilino"
+            app:destination="@id/nav_inquilino" />
+    </fragment>
+
+    <fragment
         android:id="@+id/nav_inquilino"
         android:name="com.example.inmobiliarianovara.ui.Inquilino.InquilinoFragment"
         android:label="@string/Inquilino"
-        tools:layout="@layout/fragment_inquilino" />
+        tools:layout="@layout/fragment_inquilino" >
+        <action
+            android:id="@+id/action_nav_inquilino_to_nav_inmueblesAlquilados"
+            app:destination="@id/nav_InmueblesAlquilados" />
+    </fragment>
+
     <fragment
         android:id="@+id/nav_logout"
         android:name="com.example.inmobiliarianovara.ui.Logout.LogoutFragment"
         android:label="@string/Logout"
         tools:layout="@layout/fragment_logoout" />
+
     <fragment
         android:id="@+id/inmueblesFragment"
         android:name="com.example.inmobiliarianovara.ui.Inmuebles.InmuebleFragment"
         android:label="inmueble_fragment"
         tools:layout="@layout/inmueble_fragment" />
     <fragment
-        android:id="@+id/pagoFragment"
-        android:name="com.example.inmobiliarianovara.ui.Pago.PagoFragment"
-        android:label="PagoFragment" />
-    <fragment
-        android:id="@+id/contratosFragment"
+        android:id="@+id/nav_Contrato"
         android:name="com.example.inmobiliarianovara.ui.Contratos.ContratosFragment"
         android:label="fragment_contratos"
         tools:layout="@layout/fragment_contratos" />
+
     <fragment
-        android:id="@+id/contratoFragment"
+        android:id="@+id/detalleContrato"
         android:name="com.example.inmobiliarianovara.ui.Contratos.ContratoFragment"
-        android:label="ContratoFragment" />
+        android:label="ContratoFragment"
+        tools:layout="@layout/detalle_contrato_fragment" />
+
 </navigation>

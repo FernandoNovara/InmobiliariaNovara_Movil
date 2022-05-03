@@ -1,4 +1,4 @@
-package com.example.inmobiliarianovara.ui.Inmuebles;
+package com.example.inmobiliarianovara.ui.Inquilino;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -19,34 +19,35 @@ import com.example.inmobiliarianovara.modelo.Inmueble;
 
 import java.util.ArrayList;
 
-public class InmueblesFragment extends Fragment {
-    private RecyclerView rvInmuebles;
-    private InmueblesViewModel inmueblesViewModel;
-    InmuebleAdapter adapter;
+public class InmueblesAlquiladosFragment extends Fragment {
+    private RecyclerView rvInmueblesAlquilados;
+    private InmueblesAlquiladosViewModel inmueblesAlquiladosViewModel;
+    Inmueble_alquilados_Adapter adapter;
     Context context;
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        View root = inflater.inflate(R.layout.fragment_inmueble, container, false);
+        View root = inflater.inflate(R.layout.fragment_inmuebles_alquilados, container, false);
         context = root.getContext();
         inicializar(root);
         return root;
     }
 
     private void inicializar(View view) {
-        rvInmuebles = view.findViewById(R.id.rvInmuebles);
-        inmueblesViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(InmueblesViewModel.class);
-        inmueblesViewModel.getInmuebles().observe(getViewLifecycleOwner(), new Observer<ArrayList<Inmueble>>() {
+        rvInmueblesAlquilados = view.findViewById(R.id.rvInmueblesAlquilados);
+        inmueblesAlquiladosViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(InmueblesAlquiladosViewModel.class);
+        inmueblesAlquiladosViewModel.getInmuebles().observe(getViewLifecycleOwner(), new Observer<ArrayList<Inmueble>>() {
             @Override
             public void onChanged(ArrayList<Inmueble> inmuebles) {
                 GridLayoutManager gridLayoutManager= new GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false);
-                rvInmuebles.setLayoutManager(gridLayoutManager);
-                adapter = new InmuebleAdapter(context, inmuebles, getLayoutInflater());
-                rvInmuebles.setAdapter(adapter);
+                rvInmueblesAlquilados.setLayoutManager(gridLayoutManager);
+                adapter = new Inmueble_alquilados_Adapter(context, inmuebles, getLayoutInflater());
+                rvInmueblesAlquilados.setAdapter(adapter);
             }
         });
-        inmueblesViewModel.cargarInmuebles();
+        inmueblesAlquiladosViewModel.cargarInmueblesAlquilados();
     }
 
 }

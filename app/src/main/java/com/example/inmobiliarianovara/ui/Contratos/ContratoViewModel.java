@@ -21,7 +21,7 @@ import com.example.inmobiliarianovara.request.ApiClient;
 import java.util.Calendar;
 
 public class ContratoViewModel extends AndroidViewModel {
-    // TODO: Implement the ViewModel
+
     private MutableLiveData<Contrato> contrato;
 
     public ContratoViewModel(@NonNull Application application) {
@@ -36,10 +36,8 @@ public class ContratoViewModel extends AndroidViewModel {
     }
 
     public void cargarContrato(Bundle bundle) {
-        //Acá recibiríamos un inmueble o Id de inmueble, y buscaríamos en la base de datos el contrato vigente de ese inmueble
-        //En caso de no existir, la vista mostraría un mensaje (Si partimos de la pestaña de contratos se supone que el inmueble tiene un contrato vigente)
-        Inmueble inmueble = (Inmueble) bundle.get("inmueble");
         ApiClient apiClient=ApiClient.getApi();
+        Inmueble inmueble = (Inmueble) bundle.get("inmueble");
         Contrato contrato=apiClient.obtenerContratoVigente(inmueble);
 
         this.contrato.setValue(contrato);

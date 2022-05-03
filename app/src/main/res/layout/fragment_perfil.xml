@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/etDniPerfil"
+        android:id="@+id/etCodigoInquilino"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -34,7 +34,7 @@
         android:textColorHint="#838383"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDni" />
+        app:layout_constraintTop_toBottomOf="@+id/tvCodigoInquilino" />
 
     <TextView
         android:id="@+id/tvFechaInicio"
@@ -46,7 +46,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.289"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etDniPerfil" />
+        app:layout_constraintTop_toBottomOf="@+id/etCodigoInquilino" />
 
     <TextView
         android:id="@+id/tvInmueble"
@@ -58,10 +58,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.295"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etInquilino" />
+        app:layout_constraintTop_toBottomOf="@+id/etEmailInquilino" />
 
     <EditText
-        android:id="@+id/etInquilino"
+        android:id="@+id/etEmailInquilino"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -76,10 +76,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvInquilino" />
+        app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
 
     <TextView
-        android:id="@+id/tvInquilino"
+        android:id="@+id/tvEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -88,10 +88,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.309"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etMontoAlquiler" />
+        app:layout_constraintTop_toBottomOf="@+id/etDni" />
 
     <EditText
-        android:id="@+id/etInmueble"
+        android:id="@+id/etTelefonoInquilino"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -110,7 +110,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvInmueble" />
 
     <EditText
-        android:id="@+id/etFechaInicio"
+        android:id="@+id/etNombreInquilino"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -129,7 +129,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvFechaInicio" />
 
     <EditText
-        android:id="@+id/etFechaFinal"
+        android:id="@+id/etApellidoInquilino"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -157,10 +157,10 @@
         android:textColor="#fff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etInmueble" />
+        app:layout_constraintTop_toBottomOf="@+id/etTelefonoInquilino" />
 
     <EditText
-        android:id="@+id/etMontoAlquiler"
+        android:id="@+id/etDni"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -175,10 +175,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMontoAlquiler" />
+        app:layout_constraintTop_toBottomOf="@+id/tvDniInquilino" />
 
     <TextView
-        android:id="@+id/tvMontoAlquiler"
+        android:id="@+id/tvDniInquilino"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -187,7 +187,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.276"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etFechaFinal" />
+        app:layout_constraintTop_toBottomOf="@+id/etApellidoInquilino" />
 
     <TextView
         android:id="@+id/tvFechaFinal"
@@ -199,10 +199,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.289"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etFechaInicio" />
+        app:layout_constraintTop_toBottomOf="@+id/etNombreInquilino" />
 
     <TextView
-        android:id="@+id/tvDni"
+        android:id="@+id/tvCodigoInquilino"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"

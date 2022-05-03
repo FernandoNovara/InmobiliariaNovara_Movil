@@ -36,7 +36,7 @@ public class InmuebleConContratoAdapter extends RecyclerView.Adapter<InmuebleCon
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.item_inmueble_alquilado_fragment, parent, false);
+        View view = inflater.inflate(R.layout.fragment_contratos, parent, false);
         return new ViewHolder(view);
     }
 
@@ -47,8 +47,6 @@ public class InmuebleConContratoAdapter extends RecyclerView.Adapter<InmuebleCon
                 .load(inmuebles.get(position).getImagen())
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(holder.ivImagenInmueble);
-
-
 
     }
 
@@ -64,14 +62,13 @@ public class InmuebleConContratoAdapter extends RecyclerView.Adapter<InmuebleCon
             super(itemView);
             ivImagenInmueble = itemView.findViewById(R.id.ivImagenInmueble);
             tvDireccion = itemView.findViewById(R.id.tvDireccion);
-            btContrato = itemView.findViewById(R.id.btnVer);
             btContrato.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Bundle bundle = new Bundle();
                     Inmueble inmueble = inmuebles.get(getAdapterPosition());
                     bundle.putSerializable("inmueble", inmueble);
-                    Navigation.findNavController((Activity) context, R.id.nav_host_fragment_content_main).navigate(R.id.rvContratos, bundle);
+                    Navigation.findNavController((Activity) context, R.id.nav_host_fragment_content_main).navigate(R.id.contratoFragment , bundle);
                 }
             });
         }

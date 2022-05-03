@@ -1,4 +1,4 @@
-package com.example.inmobiliarianovara.ui.Inmuebles;
+package com.example.inmobiliarianovara.ui.Inquilino;
 
 import android.app.Activity;
 import android.content.Context;
@@ -13,7 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
-
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.inmobiliarianovara.R;
@@ -21,14 +20,14 @@ import com.example.inmobiliarianovara.modelo.Inmueble;
 
 import java.util.List;
 
-public class InmuebleAdapter extends RecyclerView.Adapter<InmuebleAdapter.ViewHolder> {
+public class Inmueble_alquilados_Adapter extends RecyclerView.Adapter<Inmueble_alquilados_Adapter.ViewHolder> {
     private Context context;
     private List<Inmueble> inmuebles;
     private LayoutInflater inflater;
 
 
 
-    public InmuebleAdapter(Context context, List<Inmueble> inmuebles, LayoutInflater inflater) {
+    public Inmueble_alquilados_Adapter(Context context, List<Inmueble> inmuebles, LayoutInflater inflater) {
         this.context = context;
         this.inmuebles = inmuebles;
         this.inflater = inflater;
@@ -36,18 +35,17 @@ public class InmuebleAdapter extends RecyclerView.Adapter<InmuebleAdapter.ViewHo
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.item_inmueble_fragment, parent, false);
+        View view = inflater.inflate(R.layout.item_inmueble_alquilado_fragment, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.tvDireccion.setText(inmuebles.get(position).getDireccion());
-        holder.tvPrecio.setText("$" + inmuebles.get(position).getPrecio());
+        holder.tvDireccionAlquilado.setText(inmuebles.get(position).getDireccion());
         Glide.with(context)
                 .load(inmuebles.get(position).getImagen())
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(holder.ivImagenInmueble);
+                .into(holder.ivImagenInmuebleAlquilado);
 
     }
 
@@ -59,29 +57,24 @@ public class InmuebleAdapter extends RecyclerView.Adapter<InmuebleAdapter.ViewHo
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tvPrecio;
-        TextView tvDireccion;
-        ImageView ivImagenInmueble;
+        TextView tvDireccionAlquilado;
+        ImageView ivImagenInmuebleAlquilado;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            ivImagenInmueble = itemView.findViewById(R.id.ivImagenInmueble);
-            tvPrecio = itemView.findViewById(R.id.tvPrecio);
-            tvDireccion = itemView.findViewById(R.id.tvDireccion);
+            ivImagenInmuebleAlquilado = itemView.findViewById(R.id.ivImagenInmuebleAlquilado);
+            tvDireccionAlquilado = itemView.findViewById(R.id.tvDireccionAlquilado);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Bundle bundle = new Bundle();
                     Inmueble inmueble = inmuebles.get(getAdapterPosition());
                     bundle.putSerializable("inmueble", inmueble);
-                    Navigation.findNavController((Activity) context, R.id.nav_host_fragment_content_main).navigate(R.id.inmueblesFragment, bundle);
+                    Navigation.findNavController((Activity) context, R.id.nav_host_fragment_content_main).navigate(R.id.nav_inquilino, bundle);
                 }
             });
         }
     }
 }
-
-
-
 
 
 

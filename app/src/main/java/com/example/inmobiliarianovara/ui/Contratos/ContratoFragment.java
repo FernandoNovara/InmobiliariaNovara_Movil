@@ -13,13 +13,10 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.Navigation;
 
 
 import com.example.inmobiliarianovara.R;
 import com.example.inmobiliarianovara.modelo.Contrato;
-
-import java.text.SimpleDateFormat;
 
 public class ContratoFragment extends Fragment {
 
@@ -48,8 +45,8 @@ public class ContratoFragment extends Fragment {
         tvCodigoContrato = view.findViewById(R.id.tvCodigoContrato);
         tvFechaInicio = view.findViewById(R.id.tvFechaInicio);
         tvFechaFin = view.findViewById(R.id.tvFechaFinal);
-        tvMontoAlquiler = view.findViewById(R.id.tvMontoAlquiler);
-        tvInquilino = view.findViewById(R.id.tvInquilino);
+        tvMontoAlquiler = view.findViewById(R.id.tvDniInquilino);
+        tvInquilino = view.findViewById(R.id.tvEmail);
         tvInmueble = view.findViewById(R.id.tvInmueble);
         btPagos=view.findViewById(R.id.btnPagos);
         btPagos.setOnClickListener(new View.OnClickListener() {
@@ -57,7 +54,6 @@ public class ContratoFragment extends Fragment {
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("contrato", contratoVer);
-                Navigation.findNavController(getActivity(), R.id.nav_host_fragment_content_main).navigate(R.id.pagoFragment, bundle);
             }
         });
 
@@ -71,7 +67,7 @@ public class ContratoFragment extends Fragment {
                 tvFechaFin.setText(contrato.getFechaFin());
                 tvMontoAlquiler.setText("$" + contrato.getMontoAlquiler());
                 tvInquilino.setText(contrato.getInquilino().getNombre() + " " + contrato.getInquilino().getApellido());
-                tvInmueble.setText("Inmueble en " + contrato.getInmueble().getDireccion());
+                tvInmueble.setText(contrato.getInmueble().getDireccion());
             }
         });
         contratoViewModel.cargarContrato(getArguments());

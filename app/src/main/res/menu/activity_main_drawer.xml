@@ -10,14 +10,14 @@
             android:title="@string/Inicio" />
         <item
             android:id="@+id/nav_perfil"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_menu_camera"
             android:title="@string/Perfil" />
         <item
             android:id="@+id/nav_inmuebles"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/Inmuebles" />
         <item
-            android:id="@+id/nav_inquilino"
+            android:id="@+id/nav_InmueblesAlquilados"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/Inquilino" />
         <item
